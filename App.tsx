@@ -1,11 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
+import ListScreen from "./screens/ListScreen";
 
 const App: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>App's not ready yet!</Text>
+      <ListScreen />
       <StatusBar style="auto" />
     </View>
   );
