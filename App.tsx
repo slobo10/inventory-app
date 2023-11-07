@@ -1,14 +1,17 @@
 import { StatusBar } from "expo-status-bar";
+import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>App not ready yet!</Text>
+      <Text style={styles.text}>App's not ready yet!</Text>
       <StatusBar style="auto" />
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
