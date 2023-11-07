@@ -3,15 +3,20 @@ import { FlatList, View, Text } from "react-native";
 import styles from "../constants/styles";
 import PrimaryButton from "../components/PrimaryButton";
 
-const ListScreen: React.FC<{ listItems: String[] }> = ({ listItems }) => {
+const ListScreen: React.FC<{
+  listItems: String[];
+  onEditMode: (editingObject: number) => void;
+}> = ({ listItems, onEditMode }) => {
   return (
     <View style={styles.listContainer}>
       <FlatList
         data={listItems}
-        renderItem={({ item }) => (
+        renderItem={({ item, index }) => (
           <View style={styles.listItemContainer}>
             <Text style={styles.listItemText}>{item}</Text>
-            <PrimaryButton>Edit</PrimaryButton>
+            <PrimaryButton onPress={onEditMode.bind(this, index)}>
+              Edit
+            </PrimaryButton>
           </View>
         )}
       />
