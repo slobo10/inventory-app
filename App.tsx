@@ -1,7 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import ListScreen from "./screens/ListScreen";
+import styles from "./constants/styles";
 
 const App: React.FC = () => {
   const [listItems, setListItems]: [String[], any] = useState([
@@ -10,7 +11,7 @@ const App: React.FC = () => {
   ]);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.rootContainer}>
       <ListScreen listItems={listItems} />
       <StatusBar style="auto" />
     </View>
@@ -18,16 +19,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    fontSize: 100,
-    fontWeight: "bold",
-  },
-});
