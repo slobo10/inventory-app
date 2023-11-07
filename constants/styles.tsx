@@ -10,15 +10,29 @@ const styles = StyleSheet.create({
   listContainer: {
     width: "95%",
   },
-  listText: {
-    flex: 1,
+  listItemContainer: {
+    flexDirection: "row",
     justifyContent: "center",
-    textAlign: "center",
-    fontSize: 50,
-    fontWeight: "bold",
+    alignItems: "center",
     backgroundColor: "grey",
-    borderRadius: 10,
     marginBottom: 10,
+    borderRadius: 10,
+  },
+  listItemText: {
+    flex: 1,
+    fontSize: 30,
+    textAlign: "left",
+    fontWeight: "bold",
+    marginLeft: "5%",
+  },
+  primaryButtonText: {
+    flex: 1,
+    fontSize: 30,
+    backgroundColor: "darkgrey",
+    borderRadius: 10,
+    margin: 5,
+    padding: 5,
+    textAlign: "right",
   },
 });
 
