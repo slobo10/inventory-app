@@ -1,11 +1,13 @@
 import React from "react";
-import { Text, View } from "react-native";
-import styles from "../constants/styles";
+import { FlatList, View, Text } from "react-native";
 
-const ListScreen: React.FC = () => {
+const ListScreen: React.FC<{ listItems: String[] }> = ({ listItems }) => {
   return (
     <View>
-      <Text style={styles.listScreenText}>In the clear!!</Text>
+      <FlatList
+        data={listItems}
+        renderItem={({ item }) => <Text>{item}</Text>}
+      />
     </View>
   );
 };
