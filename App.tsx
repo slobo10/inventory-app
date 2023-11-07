@@ -6,8 +6,9 @@ import styles from "./constants/styles";
 
 const App: React.FC = () => {
   const [listItems, setListItems]: [String[], any] = useState([
-    "Item1",
-    "Item2",
+    "Dog",
+    "Another Dog",
+    "Super Unexpected Thing: Anotherother Dog",
   ]);
 
   return (
