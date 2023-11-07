@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
+import styles from "../constants/styles";
 
 const ListScreen: React.FC = () => {
   return (
     <View>
-      <Text>In the clear!!</Text>
+      <Text style={styles.listScreenText}>In the clear!!</Text>
     </View>
   );
 };
