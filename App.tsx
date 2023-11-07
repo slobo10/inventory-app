@@ -1,6 +1,6 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import { View } from "react-native";
+import { StatusBar } from "expo-status-bar";
 import ListScreen from "./screens/ListScreen";
 import styles from "./constants/styles";
 
