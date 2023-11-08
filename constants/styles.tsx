@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     marginLeft: "5%",
   },
   primaryButtonText: {
-    flex: 1,
     fontSize: 30,
     backgroundColor: "darkgrey",
     borderRadius: 10,

@@ -3,7 +3,7 @@ import { Pressable, Text } from "react-native";
 import styles from "../constants/styles";
 
 const PrimaryButton: React.FC<{
-  children: string;
+  children: String;
   onPress?: any;
 }> = ({
   //TODO: Get rid of type: any

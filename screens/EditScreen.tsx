@@ -1,17 +1,35 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 
 const EditScreen: React.FC<{
-  editingObject: String;
+  listItems: string[];
+  setListItems: any;
+  editIndex: number;
   onReturnToMainScreen: () => void;
-}> = ({ editingObject, onReturnToMainScreen }) => {
+}> = ({ listItems, setListItems, editIndex, onReturnToMainScreen }) => {
+  const [tempItemValue, setTempItemValue] = useState(listItems[editIndex]);
   return (
     <View>
-      <Text>Editing Item: {editingObject}</Text>
-      <PrimaryButton onPress={onReturnToMainScreen}>
-        Return to list.
+      <TextInput
+        value={tempItemValue}
+        onChangeText={(textValue: string) => {
+          setTempItemValue(textValue);
+        }}
+      />
+      <PrimaryButton
+        onPress={() => {
+          setListItems((oldItems: string[]) => [
+            ...oldItems.slice(0, editIndex),
+            tempItemValue,
+            ...oldItems.slice(editIndex + 1),
+          ]);
+          onReturnToMainScreen();
+        }}
+      >
+        Apply
       </PrimaryButton>
+      <PrimaryButton onPress={onReturnToMainScreen}>Cancel</PrimaryButton>
     </View>
   );
 };
