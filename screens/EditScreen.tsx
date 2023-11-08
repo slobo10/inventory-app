@@ -8,7 +8,10 @@ const EditScreen: React.FC<{
   editIndex: number;
   onReturnToMainScreen: () => void;
 }> = ({ listItems, setListItems, editIndex, onReturnToMainScreen }) => {
-  const [tempItemValue, setTempItemValue] = useState(listItems[editIndex]);
+  const [tempItemValue, setTempItemValue]: [string, Function] = useState(
+    listItems[editIndex]
+  );
+
   return (
     <View>
       <TextInput

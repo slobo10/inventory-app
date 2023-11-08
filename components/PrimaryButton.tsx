@@ -9,7 +9,9 @@ const PrimaryButton: React.FC<{
   return (
     <Pressable
       onPress={onPress}
-      style={({ pressed }) => pressed && { opacity: 0.25 }}
+      style={({ pressed }: { pressed: boolean }) =>
+        pressed && { opacity: 0.25 }
+      }
     >
       <Text style={styles.primaryButtonText}>{children}</Text>
     </Pressable>
