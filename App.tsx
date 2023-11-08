@@ -6,7 +6,7 @@ import styles from "./constants/styles";
 import EditScreen from "./screens/EditScreen";
 
 const App: React.FC = () => {
-  const [listItems, setListItems]: [string[], any] = useState([
+  const [listItems, setListItems]: [string[], Function] = useState([
     "Dog",
     "Another Dog",
     "Super Unexpected Thing: Anotherother Dog",
@@ -16,7 +16,7 @@ const App: React.FC = () => {
 
   const [currentEditingObject, setCurrentEditingObject]: [
     number | undefined,
-    any
+    Function
   ] = useState(undefined);
 
   var currentScreen: any | undefined = undefined;

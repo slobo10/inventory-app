@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, TextInput } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 
 const EditScreen: React.FC<{
   listItems: string[];
-  setListItems: any;
+  setListItems: Function;
   editIndex: number;
   onReturnToMainScreen: () => void;
 }> = ({ listItems, setListItems, editIndex, onReturnToMainScreen }) => {

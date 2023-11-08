@@ -4,12 +4,8 @@ import styles from "../constants/styles";
 
 const PrimaryButton: React.FC<{
   children: String;
-  onPress?: any;
-}> = ({
-  //TODO: Get rid of type: any
-  children,
-  onPress,
-}) => {
+  onPress?: () => void;
+}> = ({ children, onPress }) => {
   return (
     <Pressable
       onPress={onPress}

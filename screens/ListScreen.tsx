@@ -4,7 +4,7 @@ import styles from "../constants/styles";
 import PrimaryButton from "../components/PrimaryButton";
 
 const ListScreen: React.FC<{
-  listItems: String[];
+  listItems: string[];
   onEditMode: (editingObject: number) => void;
 }> = ({ listItems, onEditMode }) => {
   return (
