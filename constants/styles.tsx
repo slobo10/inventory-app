@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
     padding: 5,
     textAlign: "center",
   },
+  horizontalContainer: {
+    flexDirection: "row",
+  },
 });
 
 export default styles;
