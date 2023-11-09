@@ -22,6 +22,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: "5%",
   },
+  warningText: {
+    textAlign: "center",
+    fontSize: 30,
+    backgroundColor: "red",
+    borderRadius: 10,
+  },
   primaryButtonText: {
     fontSize: 30,
     backgroundColor: "darkgrey",
