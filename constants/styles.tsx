@@ -3,11 +3,11 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
-    backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "#fff",
   },
-  listContainer: {
+  subRootContainer: {
     width: "95%",
   },
   listItemContainer: {
@@ -34,7 +34,21 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   horizontalContainer: {
+    flex: 1,
     flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  textInput: {
+    width: "100%",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    alignSelf: "center",
+    borderStyle: "solid",
+    borderWidth: 2,
+    borderColor: "black",
+    borderRadius: 10,
   },
 });
 

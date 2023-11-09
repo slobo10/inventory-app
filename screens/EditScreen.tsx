@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, TextInput } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import HorizontalView from "../components/HorizontalView";
+import styles from "../constants/styles";
 
 const EditScreen: React.FC<{
   listItems: string[];
@@ -14,8 +15,9 @@ const EditScreen: React.FC<{
   );
 
   return (
-    <View>
+    <View style={styles.subRootContainer}>
       <TextInput
+        style={styles.textInput}
         value={tempItemValue}
         onChangeText={(textValue: string) => {
           setTempItemValue(textValue);
@@ -23,6 +25,7 @@ const EditScreen: React.FC<{
       />
       <HorizontalView>
         <PrimaryButton
+          style={{ flex: 1 }}
           onPress={() => {
             setListItems((oldItems: string[]) => [
               ...oldItems.slice(0, editIndex),
@@ -34,7 +37,9 @@ const EditScreen: React.FC<{
         >
           Apply
         </PrimaryButton>
-        <PrimaryButton onPress={onReturnToMainScreen}>Cancel</PrimaryButton>
+        <PrimaryButton style={{ flex: 1 }} onPress={onReturnToMainScreen}>
+          Cancel
+        </PrimaryButton>
       </HorizontalView>
     </View>
   );

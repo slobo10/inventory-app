@@ -8,7 +8,7 @@ const ListScreen: React.FC<{
   onEditMode: (editingObject: number) => void;
 }> = ({ listItems, onEditMode }) => {
   return (
-    <View style={styles.listContainer}>
+    <View style={styles.subRootContainer}>
       <FlatList
         data={listItems}
         renderItem={({ item, index }) => (
