@@ -24,6 +24,9 @@ const EditScreen: React.FC<{
         }}
       />
       <HorizontalView>
+        <PrimaryButton style={{ flex: 1 }} onPress={onReturnToMainScreen}>
+          Cancel
+        </PrimaryButton>
         <PrimaryButton
           active={
             tempItemValue != listItems[editIndex] && tempItemValue.length > 0
@@ -39,9 +42,6 @@ const EditScreen: React.FC<{
           }}
         >
           Apply
-        </PrimaryButton>
-        <PrimaryButton style={{ flex: 1 }} onPress={onReturnToMainScreen}>
-          Cancel
         </PrimaryButton>
       </HorizontalView>
     </View>
