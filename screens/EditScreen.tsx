@@ -120,8 +120,8 @@ const EditScreen: React.FC<{
       currentSubScreen = (
         <>
           <Text style={styles.warningText}>
-            Are you sure you want to delete {listItems[editIndex]}? This cannot
-            be undone!
+            Are you sure you want to delete "{listItems[editIndex]}"? This
+            cannot be undone!
           </Text>
           <HorizontalView>
             <PrimaryButton
