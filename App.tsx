@@ -31,6 +31,7 @@ const App: React.FC = () => {
             setCurrentScreen(1);
             setCurrentEditingObject(editingObject);
           }}
+          setListItems={setListItems}
         />
       );
       break;

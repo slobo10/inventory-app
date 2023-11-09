@@ -30,7 +30,17 @@ const EditScreen: React.FC<{
             }}
           />
           <HorizontalView>
-            <PrimaryButton style={{ flex: 1 }} onPress={onReturnToMainScreen}>
+            <PrimaryButton
+              style={{ flex: 1 }}
+              onPress={() => {
+                if (listItems[editIndex].length == 0) {
+                  setListItems((oldItems: string[]) => [
+                    ...oldItems.slice(0, editIndex),
+                  ]);
+                }
+                onReturnToMainScreen();
+              }}
+            >
               Cancel
             </PrimaryButton>
             <PrimaryButton
@@ -52,38 +62,40 @@ const EditScreen: React.FC<{
             </PrimaryButton>
           </HorizontalView>
           <HorizontalView>
-            <PrimaryButton
-              style={{ flex: 1 / 2, paddingTop: 10 }}
-              textStyle={{ backgroundColor: "red" }}
-              onPress={() => {
-                if (Platform.OS == "ios") {
-                  Alert.alert(
-                    "CONFIRM DELETE!",
-                    "Are you sure you want to delete " +
-                      listItems[editIndex] +
-                      "? This regrettable action cannot be undone!",
-                    [
-                      {
-                        text: "Yes. I'm sure.",
-                        onPress: () => {
-                          setListItems((oldItems: string[]) => [
-                            ...oldItems.slice(0, editIndex),
-                            ...oldItems.slice(editIndex + 1),
-                          ]);
-                          onReturnToMainScreen();
+            {listItems[editIndex].length > 0 && (
+              <PrimaryButton
+                style={{ flex: 1 / 2, paddingTop: 10 }}
+                textStyle={{ backgroundColor: "red" }}
+                onPress={() => {
+                  if (Platform.OS == "ios") {
+                    Alert.alert(
+                      "CONFIRM DELETE!",
+                      "Are you sure you want to delete " +
+                        listItems[editIndex] +
+                        "? This regrettable action cannot be undone!",
+                      [
+                        {
+                          text: "Yes. I'm sure.",
+                          onPress: () => {
+                            setListItems((oldItems: string[]) => [
+                              ...oldItems.slice(0, editIndex),
+                              ...oldItems.slice(editIndex + 1),
+                            ]);
+                            onReturnToMainScreen();
+                          },
+                          style: "destructive",
                         },
-                        style: "destructive",
-                      },
-                      { text: "NOOO!", style: "cancel" },
-                    ]
-                  );
-                } else {
-                  setSubScreenState(1);
-                }
-              }}
-            >
-              Delete
-            </PrimaryButton>
+                        { text: "NOOO!", style: "cancel" },
+                      ]
+                    );
+                  } else {
+                    setSubScreenState(1);
+                  }
+                }}
+              >
+                Delete
+              </PrimaryButton>
+            )}
           </HorizontalView>
         </>
       );
