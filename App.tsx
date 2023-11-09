@@ -12,7 +12,8 @@ const App: React.FC = () => {
     "Super Unexpected Thing: Anotherother Dog",
   ]);
 
-  const [currentScreenState, setCurrentScreen]: [number, any] = useState(0);
+  const [currentScreenState, setCurrentScreen]: [number, Function] =
+    useState(0);
 
   const [currentEditingObject, setCurrentEditingObject]: [
     number | undefined,
