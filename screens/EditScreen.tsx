@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TextInput } from "react-native";
+import { Platform, View, TextInput, Alert } from "react-native";
 import PrimaryButton from "../components/PrimaryButton";
 import HorizontalView from "../components/HorizontalView";
 import styles from "../constants/styles";
@@ -42,6 +42,44 @@ const EditScreen: React.FC<{
           }}
         >
           Apply
+        </PrimaryButton>
+      </HorizontalView>
+      <HorizontalView>
+        <PrimaryButton
+          style={{ flex: 1 / 2, paddingTop: 10 }}
+          textStyle={{ backgroundColor: "red" }}
+          onPress={() => {
+            if (Platform.OS == "ios") {
+              Alert.alert(
+                "CONFIRM DELETE!",
+                "Are you sure you want to delete " +
+                  listItems[editIndex] +
+                  "? This regrettable action cannot be undone!",
+                [
+                  {
+                    text: "Yes. I'm sure.",
+                    onPress: () => {
+                      setListItems((oldItems: string[]) => [
+                        ...oldItems.slice(0, editIndex),
+                        ...oldItems.slice(editIndex + 1),
+                      ]);
+                      onReturnToMainScreen();
+                    },
+                    style: "destructive",
+                  },
+                  { text: "NOOO!", style: "cancel" },
+                ]
+              );
+            } else {
+              setListItems((oldItems: string[]) => [
+                ...oldItems.slice(0, editIndex),
+                ...oldItems.slice(editIndex + 1),
+              ]);
+              onReturnToMainScreen();
+            }
+          }}
+        >
+          Delete
         </PrimaryButton>
       </HorizontalView>
     </View>
