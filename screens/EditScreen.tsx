@@ -28,6 +28,21 @@ const EditScreen: React.FC<{
             onChangeText={(textValue: string) => {
               setTempItemValue(textValue);
             }}
+            onKeyPress={({ key }: any) => {
+              console.log(key);
+              if (
+                key === "Enter" &&
+                tempItemValue != listItems[editIndex] &&
+                tempItemValue.trim().length > 0
+              ) {
+                setListItems((oldItems: string[]) => [
+                  ...oldItems.slice(0, editIndex),
+                  tempItemValue,
+                  ...oldItems.slice(editIndex + 1),
+                ]);
+                onReturnToMainScreen();
+              }
+            }}
           />
           <HorizontalView>
             <PrimaryButton
