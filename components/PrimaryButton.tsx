@@ -4,15 +4,20 @@ import styles from "../constants/styles";
 
 const PrimaryButton: React.FC<{
   children: string;
-  style?: any;
+  active?: boolean;
   onPress?: () => void;
-}> = ({ children, onPress, style }) => {
+  style?: object;
+}> = ({ children, onPress, style, active }) => {
+  if (active === undefined) {
+    active = true;
+  }
+
   return (
     <Pressable
-      onPress={onPress}
+      onPress={active && onPress}
       style={({ pressed }: { pressed: boolean }) => [
         style,
-        pressed && { opacity: 0.25 },
+        (pressed || !active) && { opacity: 0.25 },
       ]}
     >
       <Text style={styles.primaryButtonText}>{children}</Text>

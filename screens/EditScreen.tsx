@@ -25,6 +25,9 @@ const EditScreen: React.FC<{
       />
       <HorizontalView>
         <PrimaryButton
+          active={
+            tempItemValue != listItems[editIndex] && tempItemValue.length > 0
+          }
           style={{ flex: 1 }}
           onPress={() => {
             setListItems((oldItems: string[]) => [
