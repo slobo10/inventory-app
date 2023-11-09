@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, View, Text } from "react-native";
 import styles from "../constants/styles";
 import PrimaryButton from "../components/PrimaryButton";
+import HorizontalView from "../components/HorizontalView";
 
 const ListScreen: React.FC<{
   listItems: string[];
@@ -12,12 +13,12 @@ const ListScreen: React.FC<{
       <FlatList
         data={listItems}
         renderItem={({ item, index }) => (
-          <View style={styles.listItemContainer}>
+          <HorizontalView style={styles.listItemContainer}>
             <Text style={styles.listItemText}>{item}</Text>
             <PrimaryButton onPress={onEditMode.bind(this, index)}>
               Edit
             </PrimaryButton>
-          </View>
+          </HorizontalView>
         )}
       />
     </View>

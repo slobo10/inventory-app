@@ -11,9 +11,6 @@ const styles = StyleSheet.create({
     width: "95%",
   },
   listItemContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "grey",
     marginBottom: 10,
     borderRadius: 10,
