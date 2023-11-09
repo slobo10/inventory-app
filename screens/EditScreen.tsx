@@ -46,7 +46,7 @@ const EditScreen: React.FC<{
             <PrimaryButton
               active={
                 tempItemValue != listItems[editIndex] &&
-                tempItemValue.length > 0
+                tempItemValue.trim().length > 0
               }
               style={{ flex: 1 }}
               onPress={() => {
