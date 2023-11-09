@@ -7,20 +7,21 @@ const PrimaryButton: React.FC<{
   active?: boolean;
   onPress?: () => void;
   style?: object;
-}> = ({ children, onPress, style, active }) => {
+  textStyle?: object;
+}> = ({ children, onPress, style, active, textStyle }) => {
   if (active === undefined) {
     active = true;
   }
 
   return (
     <Pressable
-      onPress={active && onPress}
+      onPress={active ? onPress : () => {}}
       style={({ pressed }: { pressed: boolean }) => [
         style,
         (pressed || !active) && { opacity: 0.25 },
       ]}
     >
-      <Text style={styles.primaryButtonText}>{children}</Text>
+      <Text style={[styles.primaryButtonText, textStyle]}>{children}</Text>
     </Pressable>
   );
 };

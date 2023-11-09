@@ -44,4 +44,4 @@ npm start
 
 ## Contribution:
 
-The best way to contribute to this app is to [fork this repository.](https://github.com/slobo10/inventory-app/fork) You can also [create an issue](https://github.com/slobo10/inventory-app/issues/new) to suggest new features or point out bugs.
+The best way to contribute to this app is to [fork this repository.](https://github.com/slobo10/inventory-app/fork) You can also [create an issue](https://github.com/slobo10/inventory-app/issues/new) to suggest new features or point out bugs.Also note that this app is cross platform, but it leans towards IOS.

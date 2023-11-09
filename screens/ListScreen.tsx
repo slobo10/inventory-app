@@ -6,8 +6,9 @@ import HorizontalView from "../components/HorizontalView";
 
 const ListScreen: React.FC<{
   listItems: string[];
+  setListItems: Function;
   onEditMode: (editingObject: number) => void;
-}> = ({ listItems, onEditMode }) => {
+}> = ({ listItems, setListItems, onEditMode }) => {
   return (
     <View style={styles.subRootContainer}>
       <FlatList
@@ -21,6 +22,16 @@ const ListScreen: React.FC<{
           </HorizontalView>
         )}
       />
+      <HorizontalView>
+        <PrimaryButton
+          onPress={() => {
+            setListItems((oldItems: string[]) => [...oldItems, ""]);
+            onEditMode(listItems.length);
+          }}
+        >
+          Add new
+        </PrimaryButton>
+      </HorizontalView>
     </View>
   );
 };

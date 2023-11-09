@@ -22,6 +22,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: "5%",
   },
+  warningText: {
+    textAlign: "center",
+    fontSize: 30,
+    backgroundColor: "red",
+    borderRadius: 10,
+  },
   primaryButtonText: {
     fontSize: 30,
     backgroundColor: "darkgrey",
@@ -31,7 +37,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   horizontalContainer: {
-    flex: 1,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",

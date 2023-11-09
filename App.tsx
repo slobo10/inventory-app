@@ -6,20 +6,17 @@ import styles from "./constants/styles";
 import EditScreen from "./screens/EditScreen";
 
 const App: React.FC = () => {
-  const [listItems, setListItems]: [string[], Function] = useState([
-    "Dog",
-    "Another Dog",
-    "Super Unexpected Thing: Anotherother Dog",
-  ]);
+  const [listItems, setListItems]: [string[], Function] = useState([]);
 
-  const [currentScreenState, setCurrentScreen]: [number, any] = useState(0);
+  const [currentScreenState, setCurrentScreen]: [number, Function] =
+    useState(0);
 
   const [currentEditingObject, setCurrentEditingObject]: [
     number | undefined,
     Function
   ] = useState(undefined);
 
-  var currentScreen: any | undefined = undefined;
+  var currentScreen: React.JSX.Element | undefined = undefined;
 
   switch (currentScreenState) {
     case 0: {
@@ -30,6 +27,7 @@ const App: React.FC = () => {
             setCurrentScreen(1);
             setCurrentEditingObject(editingObject);
           }}
+          setListItems={setListItems}
         />
       );
       break;
