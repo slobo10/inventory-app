@@ -14,7 +14,7 @@ const PrimaryButton: React.FC<{
 
   return (
     <Pressable
-      onPress={active && onPress}
+      onPress={active ? onPress : () => {}}
       style={({ pressed }: { pressed: boolean }) => [
         style,
         (pressed || !active) && { opacity: 0.25 },
