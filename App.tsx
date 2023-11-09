@@ -20,7 +20,7 @@ const App: React.FC = () => {
     Function
   ] = useState(undefined);
 
-  var currentScreen: any | undefined = undefined;
+  var currentScreen: React.JSX.Element | undefined = undefined;
 
   switch (currentScreenState) {
     case 0: {
